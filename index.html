@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password validation</title>
+</head>
+<!-- com,gov,in,co,org
+ gmail,yahoo,reddif,outlook -->
+ <!-- 
+ password-- one small,one cap,one special,one digit,8-16
+ (?.*=) -> positive look ahead / positive assertions
+ -->
+
+<body>
+    <form action="./password.html" method="get" autocomplete="off">
+        <input type="text" required pattern="[a-z\d+@[gmail|yahoo|outlook]+\.[com|in|co]"> <br>
+        <!-- 22-12-1995 , dd-mm-yyyy -->
+
+        <input type="text" required pattern="\d{2}-\d{2}-\d{4}" title="date format should be dd-mm-yyyy">
+        <br>
+        <input type="text" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[@#$%^&*()]).{8,16}"
+        title="password must contain small , cap, special,digit and length min 8 ,max 16">
+        
+        <br>
+        <input type="submit" value="save changes">
+    </form>
+</body>
+
+</html>
